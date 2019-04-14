@@ -1,0 +1,1457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190414 23:23:23.587" rpa="false">
+<suite id="s1" name="Zoopla.Co.Uk" source="C:\Users\Dusa\eclipse-workspace\selenium\ZOOPLA.CO.UK1\zoopla.co.uk">
+<suite id="s1-s1" name="Tests" source="C:\Users\Dusa\eclipse-workspace\selenium\ZOOPLA.CO.UK1\zoopla.co.uk\Tests">
+<suite id="s1-s1-s1" name="LoginPage" source="C:\Users\Dusa\eclipse-workspace\selenium\ZOOPLA.CO.UK1\zoopla.co.uk\Tests\LoginPage.robot">
+<kw name="Browser Launch" library="HomePage" type="setup">
+<doc>This is Opening URL in Browser</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190414 23:23:24.735" level="INFO">Opening browser 'gc' to base url 'https://www.zoopla.co.uk/'.</msg>
+<status status="PASS" starttime="20190414 23:23:24.735" endtime="20190414 23:23:34.328"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20190414 23:23:34.329" endtime="20190414 23:23:35.554"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:24.734" endtime="20190414 23:23:35.556"></status>
+</kw>
+<test id="s1-s1-s1-t1" name="TEST CASE 1 LOGIN">
+<kw name="Entering Search Location" library="HomePage">
+<doc>Location Name is Entering in the Search Box</doc>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of text entry element identified by ``locator``.</doc>
+<arguments>
+<arg>${Location_Textbox_Id}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:35.561" endtime="20190414 23:23:35.643"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Location_Textbox_Id}</arg>
+<arg>${LOCATION}</arg>
+</arguments>
+<msg timestamp="20190414 23:23:35.644" level="INFO">Typing text 'london' into text field 'id:search-input-location'.</msg>
+<status status="PASS" starttime="20190414 23:23:35.643" endtime="20190414 23:23:35.826"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:35.559" endtime="20190414 23:23:35.827"></status>
+</kw>
+<kw name="Clicking On Search Button" library="HomePage">
+<doc>Click on the Search Button</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${Search_Button_Id}</arg>
+</arguments>
+<msg timestamp="20190414 23:23:35.828" level="INFO">Clicking button 'id:search-submit'.</msg>
+<status status="PASS" starttime="20190414 23:23:35.828" endtime="20190414 23:23:45.868"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:35.827" endtime="20190414 23:23:45.869"></status>
+</kw>
+<kw name="Retrive Property Count" library="HomePage">
+<doc>Getting the No.Of Proprties Displayed on the Page</doc>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${Retrive_Data_Xpath}</arg>
+</arguments>
+<assign>
+<var>${Property_Count}</var>
+</assign>
+<msg timestamp="20190414 23:23:45.889" level="INFO">${Property_Count} = 25</msg>
+<status status="PASS" starttime="20190414 23:23:45.870" endtime="20190414 23:23:45.889"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${Property_Count}</arg>
+</arguments>
+<msg timestamp="20190414 23:23:45.890" level="INFO">${Property_Count} = 25</msg>
+<status status="PASS" starttime="20190414 23:23:45.890" endtime="20190414 23:23:45.891"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>*****</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:45.891" endtime="20190414 23:23:45.891"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>No.Of Properties are Displayed on the Page is : ${Property_Count}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:45.892" endtime="20190414 23:23:45.892"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:45.869" endtime="20190414 23:23:45.893"></status>
+</kw>
+<kw name="Storing Properties in List" library="HomePage">
+<doc>Storing the Property Values in List</doc>
+<kw name="Get Variable Value" library="BuiltIn">
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<arguments>
+<arg>${Property_Count}</arg>
+</arguments>
+<assign>
+<var>${Prop_Count}</var>
+</assign>
+<msg timestamp="20190414 23:23:45.895" level="INFO">${Prop_Count} = 25</msg>
+<status status="PASS" starttime="20190414 23:23:45.894" endtime="20190414 23:23:45.895"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>@{MyList}</var>
+</assign>
+<msg timestamp="20190414 23:23:45.896" level="INFO">@{MyList} = [ ]</msg>
+<status status="PASS" starttime="20190414 23:23:45.896" endtime="20190414 23:23:45.897"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | ${Prop_Count}+1 ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:45.947" level="INFO">${List1} = £325,000</msg>
+<status status="PASS" starttime="20190414 23:23:45.899" endtime="20190414 23:23:45.948"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:45.948" endtime="20190414 23:23:45.949"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:45.898" endtime="20190414 23:23:45.949"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:45.992" level="INFO">${List1} = £300,000 Guide price</msg>
+<status status="PASS" starttime="20190414 23:23:45.950" endtime="20190414 23:23:45.992"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:45.992" endtime="20190414 23:23:45.993"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:45.949" endtime="20190414 23:23:45.993"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.036" level="INFO">${List1} = £530,000</msg>
+<status status="PASS" starttime="20190414 23:23:45.994" endtime="20190414 23:23:46.037"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.038" endtime="20190414 23:23:46.040"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:45.993" endtime="20190414 23:23:46.041"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.094" level="INFO">${List1} = £950,000 Guide price</msg>
+<status status="PASS" starttime="20190414 23:23:46.042" endtime="20190414 23:23:46.094"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.095" endtime="20190414 23:23:46.095"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.041" endtime="20190414 23:23:46.096"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.141" level="INFO">${List1} = £700,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.096" endtime="20190414 23:23:46.141"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.142" endtime="20190414 23:23:46.142"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.096" endtime="20190414 23:23:46.143"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.193" level="INFO">${List1} = £280,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.143" endtime="20190414 23:23:46.193"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.194" endtime="20190414 23:23:46.195"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.143" endtime="20190414 23:23:46.195"></status>
+</kw>
+<kw name="${i} = 7" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.243" level="INFO">${List1} = £300,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.196" endtime="20190414 23:23:46.243"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.244" endtime="20190414 23:23:46.245"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.195" endtime="20190414 23:23:46.245"></status>
+</kw>
+<kw name="${i} = 8" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.285" level="INFO">${List1} = £995,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.245" endtime="20190414 23:23:46.286"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.286" endtime="20190414 23:23:46.287"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.245" endtime="20190414 23:23:46.287"></status>
+</kw>
+<kw name="${i} = 9" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.334" level="INFO">${List1} = £499,995</msg>
+<status status="PASS" starttime="20190414 23:23:46.289" endtime="20190414 23:23:46.335"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.335" endtime="20190414 23:23:46.336"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.288" endtime="20190414 23:23:46.336"></status>
+</kw>
+<kw name="${i} = 10" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.393" level="INFO">${List1} = £375,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.337" endtime="20190414 23:23:46.394"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.395" endtime="20190414 23:23:46.396"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.336" endtime="20190414 23:23:46.397"></status>
+</kw>
+<kw name="${i} = 11" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.442" level="INFO">${List1} = £650,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.398" endtime="20190414 23:23:46.443"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.443" endtime="20190414 23:23:46.444"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.398" endtime="20190414 23:23:46.444"></status>
+</kw>
+<kw name="${i} = 12" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.483" level="INFO">${List1} = £2,450,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.444" endtime="20190414 23:23:46.483"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.484" endtime="20190414 23:23:46.486"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.444" endtime="20190414 23:23:46.486"></status>
+</kw>
+<kw name="${i} = 13" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.532" level="INFO">${List1} = £575,000 Offers over</msg>
+<status status="PASS" starttime="20190414 23:23:46.487" endtime="20190414 23:23:46.533"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.533" endtime="20190414 23:23:46.534"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.486" endtime="20190414 23:23:46.534"></status>
+</kw>
+<kw name="${i} = 14" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.571" level="INFO">${List1} = £629,950</msg>
+<status status="PASS" starttime="20190414 23:23:46.535" endtime="20190414 23:23:46.571"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.572" endtime="20190414 23:23:46.572"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.535" endtime="20190414 23:23:46.573"></status>
+</kw>
+<kw name="${i} = 15" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.624" level="INFO">${List1} = £530,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.573" endtime="20190414 23:23:46.625"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.625" endtime="20190414 23:23:46.626"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.573" endtime="20190414 23:23:46.626"></status>
+</kw>
+<kw name="${i} = 16" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.681" level="INFO">${List1} = £605,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.627" endtime="20190414 23:23:46.681"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.682" endtime="20190414 23:23:46.682"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.627" endtime="20190414 23:23:46.682"></status>
+</kw>
+<kw name="${i} = 17" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.719" level="INFO">${List1} = £1,195,000 Guide price</msg>
+<status status="PASS" starttime="20190414 23:23:46.683" endtime="20190414 23:23:46.720"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.720" endtime="20190414 23:23:46.721"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.683" endtime="20190414 23:23:46.721"></status>
+</kw>
+<kw name="${i} = 18" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.756" level="INFO">${List1} = £750,000 Guide price</msg>
+<status status="PASS" starttime="20190414 23:23:46.721" endtime="20190414 23:23:46.756"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.757" endtime="20190414 23:23:46.758"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.721" endtime="20190414 23:23:46.758"></status>
+</kw>
+<kw name="${i} = 19" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.796" level="INFO">${List1} = £3,500,000 Guide price</msg>
+<status status="PASS" starttime="20190414 23:23:46.760" endtime="20190414 23:23:46.796"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.796" endtime="20190414 23:23:46.797"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.759" endtime="20190414 23:23:46.798"></status>
+</kw>
+<kw name="${i} = 20" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.830" level="INFO">${List1} = £375,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.798" endtime="20190414 23:23:46.831"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.831" endtime="20190414 23:23:46.832"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.798" endtime="20190414 23:23:46.832"></status>
+</kw>
+<kw name="${i} = 21" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.868" level="INFO">${List1} = £615,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.833" endtime="20190414 23:23:46.869"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.869" endtime="20190414 23:23:46.870"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.833" endtime="20190414 23:23:46.870"></status>
+</kw>
+<kw name="${i} = 22" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.912" level="INFO">${List1} = £325,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.871" endtime="20190414 23:23:46.912"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.912" endtime="20190414 23:23:46.913"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.870" endtime="20190414 23:23:46.913"></status>
+</kw>
+<kw name="${i} = 23" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.956" level="INFO">${List1} = £240,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.914" endtime="20190414 23:23:46.957"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.957" endtime="20190414 23:23:46.958"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.914" endtime="20190414 23:23:46.958"></status>
+</kw>
+<kw name="${i} = 24" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:46.998" level="INFO">${List1} = £275,000</msg>
+<status status="PASS" starttime="20190414 23:23:46.959" endtime="20190414 23:23:46.998"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:46.999" endtime="20190414 23:23:47.001"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:46.958" endtime="20190414 23:23:47.001"></status>
+</kw>
+<kw name="${i} = 25" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:(//li[@id]//a[@class="listing-results-price text-price"])[${i}]</arg>
+</arguments>
+<assign>
+<var>${List1}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.044" level="INFO">${List1} = £439,995</msg>
+<status status="PASS" starttime="20190414 23:23:47.002" endtime="20190414 23:23:47.044"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${MyList}</arg>
+<arg>${List1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.045" endtime="20190414 23:23:47.046"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.001" endtime="20190414 23:23:47.047"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:45.897" endtime="20190414 23:23:47.047"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${MyList}</arg>
+</arguments>
+<msg timestamp="20190414 23:23:47.049" level="INFO">${MyList} = ['£325,000', '£300,000 Guide price', '£530,000', '£950,000 Guide price', '£700,000', '£280,000', '£300,000', '£995,000', '£499,995', '£375,000', '£650,000', '£2,450,000', '£575,000 Offers over', '£629...</msg>
+<status status="PASS" starttime="20190414 23:23:47.048" endtime="20190414 23:23:47.049"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Properties Price List As Per Displayed Order:</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.050" endtime="20190414 23:23:47.051"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${MyList}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.052" endtime="20190414 23:23:47.054"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:45.893" endtime="20190414 23:23:47.054"></status>
+</kw>
+<kw name="Arranging List in Descending Order" library="HomePage">
+<doc>Property Values arrangement as per Descending Order</doc>
+<kw name="Get Variable Value" library="BuiltIn">
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<arguments>
+<arg>${MyList}</arg>
+</arguments>
+<assign>
+<var>@{MyLis}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.057" level="INFO">@{MyLis} = [ £325,000 | £300,000 Guide price | £530,000 | £950,000 Guide price | £700,000 | £280,000 | £300,000 | £995,000 | £499,995 | £375,000 | £650,000 | £2,450,000 | £575,000 Offers over | £629,950 | £530,0...</msg>
+<status status="PASS" starttime="20190414 23:23:47.056" endtime="20190414 23:23:47.057"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<assign>
+<var>@{MyList1}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.059" level="INFO">@{MyList1} = [ ]</msg>
+<status status="PASS" starttime="20190414 23:23:47.058" endtime="20190414 23:23:47.059"></status>
+</kw>
+<kw name="${i} IN [ @{MyLis} ]" type="for">
+<kw name="${i} = £325,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.061" level="INFO">£325000
+325000</msg>
+<msg timestamp="20190414 23:23:47.062" level="INFO">${Res} = 325000</msg>
+<status status="PASS" starttime="20190414 23:23:47.061" endtime="20190414 23:23:47.062"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.063" endtime="20190414 23:23:47.064"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.060" endtime="20190414 23:23:47.065"></status>
+</kw>
+<kw name="${i} = £300,000 Guide price" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.066" level="INFO">£300000 Guide price
+300000</msg>
+<msg timestamp="20190414 23:23:47.067" level="INFO">${Res} = 300000</msg>
+<status status="PASS" starttime="20190414 23:23:47.066" endtime="20190414 23:23:47.067"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.068" endtime="20190414 23:23:47.068"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.065" endtime="20190414 23:23:47.069"></status>
+</kw>
+<kw name="${i} = £530,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.070" level="INFO">£530000
+530000</msg>
+<msg timestamp="20190414 23:23:47.071" level="INFO">${Res} = 530000</msg>
+<status status="PASS" starttime="20190414 23:23:47.070" endtime="20190414 23:23:47.071"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.072" endtime="20190414 23:23:47.072"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.069" endtime="20190414 23:23:47.073"></status>
+</kw>
+<kw name="${i} = £950,000 Guide price" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.074" level="INFO">£950000 Guide price
+950000</msg>
+<msg timestamp="20190414 23:23:47.075" level="INFO">${Res} = 950000</msg>
+<status status="PASS" starttime="20190414 23:23:47.074" endtime="20190414 23:23:47.075"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.075" endtime="20190414 23:23:47.076"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.073" endtime="20190414 23:23:47.076"></status>
+</kw>
+<kw name="${i} = £700,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.078" level="INFO">£700000
+700000</msg>
+<msg timestamp="20190414 23:23:47.078" level="INFO">${Res} = 700000</msg>
+<status status="PASS" starttime="20190414 23:23:47.077" endtime="20190414 23:23:47.078"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.079" endtime="20190414 23:23:47.079"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.077" endtime="20190414 23:23:47.080"></status>
+</kw>
+<kw name="${i} = £280,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.081" level="INFO">£280000
+280000</msg>
+<msg timestamp="20190414 23:23:47.082" level="INFO">${Res} = 280000</msg>
+<status status="PASS" starttime="20190414 23:23:47.081" endtime="20190414 23:23:47.082"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.083" endtime="20190414 23:23:47.083"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.080" endtime="20190414 23:23:47.084"></status>
+</kw>
+<kw name="${i} = £300,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.085" level="INFO">£300000
+300000</msg>
+<msg timestamp="20190414 23:23:47.085" level="INFO">${Res} = 300000</msg>
+<status status="PASS" starttime="20190414 23:23:47.084" endtime="20190414 23:23:47.085"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.086" endtime="20190414 23:23:47.086"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.084" endtime="20190414 23:23:47.087"></status>
+</kw>
+<kw name="${i} = £995,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.088" level="INFO">£995000
+995000</msg>
+<msg timestamp="20190414 23:23:47.088" level="INFO">${Res} = 995000</msg>
+<status status="PASS" starttime="20190414 23:23:47.087" endtime="20190414 23:23:47.088"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.088" endtime="20190414 23:23:47.089"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.087" endtime="20190414 23:23:47.089"></status>
+</kw>
+<kw name="${i} = £499,995" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.090" level="INFO">£499995
+499995</msg>
+<msg timestamp="20190414 23:23:47.091" level="INFO">${Res} = 499995</msg>
+<status status="PASS" starttime="20190414 23:23:47.090" endtime="20190414 23:23:47.091"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.091" endtime="20190414 23:23:47.092"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.089" endtime="20190414 23:23:47.092"></status>
+</kw>
+<kw name="${i} = £375,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.093" level="INFO">£375000
+375000</msg>
+<msg timestamp="20190414 23:23:47.094" level="INFO">${Res} = 375000</msg>
+<status status="PASS" starttime="20190414 23:23:47.093" endtime="20190414 23:23:47.094"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.094" endtime="20190414 23:23:47.095"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.092" endtime="20190414 23:23:47.095"></status>
+</kw>
+<kw name="${i} = £650,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.096" level="INFO">£650000
+650000</msg>
+<msg timestamp="20190414 23:23:47.096" level="INFO">${Res} = 650000</msg>
+<status status="PASS" starttime="20190414 23:23:47.096" endtime="20190414 23:23:47.096"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.097" endtime="20190414 23:23:47.099"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.095" endtime="20190414 23:23:47.099"></status>
+</kw>
+<kw name="${i} = £2,450,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.101" level="INFO">£2450000
+2450000</msg>
+<msg timestamp="20190414 23:23:47.101" level="INFO">${Res} = 2450000</msg>
+<status status="PASS" starttime="20190414 23:23:47.100" endtime="20190414 23:23:47.101"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.102" endtime="20190414 23:23:47.103"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.100" endtime="20190414 23:23:47.103"></status>
+</kw>
+<kw name="${i} = £575,000 Offers over" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.105" level="INFO">£575000 Offers over
+575000</msg>
+<msg timestamp="20190414 23:23:47.105" level="INFO">${Res} = 575000</msg>
+<status status="PASS" starttime="20190414 23:23:47.104" endtime="20190414 23:23:47.106"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.106" endtime="20190414 23:23:47.107"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.104" endtime="20190414 23:23:47.107"></status>
+</kw>
+<kw name="${i} = £629,950" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.108" level="INFO">£629950
+629950</msg>
+<msg timestamp="20190414 23:23:47.108" level="INFO">${Res} = 629950</msg>
+<status status="PASS" starttime="20190414 23:23:47.108" endtime="20190414 23:23:47.109"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.109" endtime="20190414 23:23:47.110"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.107" endtime="20190414 23:23:47.110"></status>
+</kw>
+<kw name="${i} = £530,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.111" level="INFO">£530000
+530000</msg>
+<msg timestamp="20190414 23:23:47.111" level="INFO">${Res} = 530000</msg>
+<status status="PASS" starttime="20190414 23:23:47.110" endtime="20190414 23:23:47.111"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.112" endtime="20190414 23:23:47.112"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.110" endtime="20190414 23:23:47.112"></status>
+</kw>
+<kw name="${i} = £605,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.114" level="INFO">£605000
+605000</msg>
+<msg timestamp="20190414 23:23:47.114" level="INFO">${Res} = 605000</msg>
+<status status="PASS" starttime="20190414 23:23:47.113" endtime="20190414 23:23:47.115"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.115" endtime="20190414 23:23:47.116"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.113" endtime="20190414 23:23:47.117"></status>
+</kw>
+<kw name="${i} = £1,195,000 Guide price" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.118" level="INFO">£1195000 Guide price
+1195000</msg>
+<msg timestamp="20190414 23:23:47.118" level="INFO">${Res} = 1195000</msg>
+<status status="PASS" starttime="20190414 23:23:47.118" endtime="20190414 23:23:47.119"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.119" endtime="20190414 23:23:47.120"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.117" endtime="20190414 23:23:47.120"></status>
+</kw>
+<kw name="${i} = £750,000 Guide price" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.122" level="INFO">£750000 Guide price
+750000</msg>
+<msg timestamp="20190414 23:23:47.122" level="INFO">${Res} = 750000</msg>
+<status status="PASS" starttime="20190414 23:23:47.121" endtime="20190414 23:23:47.122"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.123" endtime="20190414 23:23:47.123"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.121" endtime="20190414 23:23:47.124"></status>
+</kw>
+<kw name="${i} = £3,500,000 Guide price" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.125" level="INFO">£3500000 Guide price
+3500000</msg>
+<msg timestamp="20190414 23:23:47.125" level="INFO">${Res} = 3500000</msg>
+<status status="PASS" starttime="20190414 23:23:47.124" endtime="20190414 23:23:47.125"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.126" endtime="20190414 23:23:47.126"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.124" endtime="20190414 23:23:47.127"></status>
+</kw>
+<kw name="${i} = £375,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.128" level="INFO">£375000
+375000</msg>
+<msg timestamp="20190414 23:23:47.128" level="INFO">${Res} = 375000</msg>
+<status status="PASS" starttime="20190414 23:23:47.127" endtime="20190414 23:23:47.129"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.129" endtime="20190414 23:23:47.130"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.127" endtime="20190414 23:23:47.130"></status>
+</kw>
+<kw name="${i} = £615,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.132" level="INFO">£615000
+615000</msg>
+<msg timestamp="20190414 23:23:47.132" level="INFO">${Res} = 615000</msg>
+<status status="PASS" starttime="20190414 23:23:47.131" endtime="20190414 23:23:47.133"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.133" endtime="20190414 23:23:47.133"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.130" endtime="20190414 23:23:47.134"></status>
+</kw>
+<kw name="${i} = £325,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.135" level="INFO">£325000
+325000</msg>
+<msg timestamp="20190414 23:23:47.135" level="INFO">${Res} = 325000</msg>
+<status status="PASS" starttime="20190414 23:23:47.134" endtime="20190414 23:23:47.136"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.136" endtime="20190414 23:23:47.137"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.134" endtime="20190414 23:23:47.137"></status>
+</kw>
+<kw name="${i} = £240,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.138" level="INFO">£240000
+240000</msg>
+<msg timestamp="20190414 23:23:47.138" level="INFO">${Res} = 240000</msg>
+<status status="PASS" starttime="20190414 23:23:47.137" endtime="20190414 23:23:47.138"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.139" endtime="20190414 23:23:47.139"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.137" endtime="20190414 23:23:47.139"></status>
+</kw>
+<kw name="${i} = £275,000" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.141" level="INFO">£275000
+275000</msg>
+<msg timestamp="20190414 23:23:47.141" level="INFO">${Res} = 275000</msg>
+<status status="PASS" starttime="20190414 23:23:47.140" endtime="20190414 23:23:47.141"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.141" endtime="20190414 23:23:47.142"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.140" endtime="20190414 23:23:47.142"></status>
+</kw>
+<kw name="${i} = £439,995" type="foritem">
+<kw name="Input Segartion" library="utils">
+<arguments>
+<arg>${i}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<msg timestamp="20190414 23:23:47.143" level="INFO">£439995
+439995</msg>
+<msg timestamp="20190414 23:23:47.144" level="INFO">${Res} = 439995</msg>
+<status status="PASS" starttime="20190414 23:23:47.143" endtime="20190414 23:23:47.144"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${Mylist1}</arg>
+<arg>${Res}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.144" endtime="20190414 23:23:47.145"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.143" endtime="20190414 23:23:47.145"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.060" endtime="20190414 23:23:47.145"></status>
+</kw>
+<kw name="Sort List" library="Collections">
+<doc>Sorts the given list in place.</doc>
+<arguments>
+<arg>${MyList1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.146" endtime="20190414 23:23:47.146"></status>
+</kw>
+<kw name="Reverse List" library="Collections">
+<doc>Reverses the given list in place.</doc>
+<arguments>
+<arg>${MyList1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.147" endtime="20190414 23:23:47.148"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Properties Price List in Descending Order :</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.149" endtime="20190414 23:23:47.150"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${MyList1}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:47.150" endtime="20190414 23:23:47.151"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.055" endtime="20190414 23:23:47.151"></status>
+</kw>
+<kw name="Selecting The Property From List Of Properties" library="HomePage">
+<doc>Selecting the Property from the list</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Selece_Property_Xpath}</arg>
+</arguments>
+<msg timestamp="20190414 23:23:47.154" level="INFO">Clicking element 'xpath:(//li[@id]/div/div[2]/h2/a)[6]'.</msg>
+<status status="PASS" starttime="20190414 23:23:47.153" endtime="20190414 23:23:51.099"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:47.152" endtime="20190414 23:23:51.100"></status>
+</kw>
+<kw name="Retriving The Property Name" library="HomePage">
+<doc>Getting the Property Name</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Prop_Name_Xpath}</arg>
+</arguments>
+<assign>
+<var>${Property}</var>
+</assign>
+<msg timestamp="20190414 23:23:51.146" level="INFO">${Property} = 2 bed flat for sale</msg>
+<status status="PASS" starttime="20190414 23:23:51.103" endtime="20190414 23:23:51.146"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${Property}</arg>
+</arguments>
+<msg timestamp="20190414 23:23:51.146" level="INFO">${Property} = 2 bed flat for sale</msg>
+<status status="PASS" starttime="20190414 23:23:51.146" endtime="20190414 23:23:51.146"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Selected Property Name is :${Property}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:51.146" endtime="20190414 23:23:51.146"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:51.101" endtime="20190414 23:23:51.150"></status>
+</kw>
+<kw name="Retriving The Seller Name And Select On Seller" library="HomePage">
+<doc>Getting the Seller Name and Selecting the Seller</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Owner_Name_Xpath}</arg>
+</arguments>
+<assign>
+<var>${Seller_Name}</var>
+</assign>
+<msg timestamp="20190414 23:23:51.183" level="INFO">${Seller_Name} = Mann - Sidcup Sales</msg>
+<status status="PASS" starttime="20190414 23:23:51.151" endtime="20190414 23:23:51.183"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Property Seller Name is :${Seller_Name}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:51.183" endtime="20190414 23:23:51.183"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Owner_Name_Xpath}</arg>
+</arguments>
+<msg timestamp="20190414 23:23:51.183" level="INFO">Clicking element 'xpath://h4[@class="ui-agent__name"]'.</msg>
+<status status="PASS" starttime="20190414 23:23:51.183" endtime="20190414 23:23:57.430"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:51.150" endtime="20190414 23:23:57.431"></status>
+</kw>
+<kw name="Checking The Listed Property Belongs To The Seller" library="HomePage">
+<doc>Comparing the Property Listed in the Seller Proprety</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${Property_Link_Xpath}</arg>
+</arguments>
+<assign>
+<var>${Property Name At Seller Page}</var>
+</assign>
+<msg timestamp="20190414 23:23:57.471" level="INFO">${Property Name At Seller Page} = 2 bed flat for sale</msg>
+<status status="PASS" starttime="20190414 23:23:57.434" endtime="20190414 23:23:57.471"></status>
+</kw>
+<kw name="Get Variable Value" library="BuiltIn">
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<arguments>
+<arg>${Property}</arg>
+</arguments>
+<assign>
+<var>${Property Name At Listing Page}</var>
+</assign>
+<msg timestamp="20190414 23:23:57.472" level="INFO">${Property Name At Listing Page} = 2 bed flat for sale</msg>
+<status status="PASS" starttime="20190414 23:23:57.471" endtime="20190414 23:23:57.472"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Property Name At Seller Page}</arg>
+<arg>${Property Name At Listing Page}</arg>
+</arguments>
+<status status="PASS" starttime="20190414 23:23:57.472" endtime="20190414 23:23:57.473"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:57.432" endtime="20190414 23:23:57.473"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:35.556" endtime="20190414 23:23:57.474" critical="yes"></status>
+</test>
+<kw name="Browser Close" library="HomePage" type="teardown">
+<doc>Closing the Browser</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190414 23:23:57.476" endtime="20190414 23:23:59.860"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:57.475" endtime="20190414 23:23:59.860"></status>
+</kw>
+<status status="PASS" starttime="20190414 23:23:23.743" endtime="20190414 23:23:59.860"></status>
+</suite>
+<status status="PASS" starttime="20190414 23:23:23.743" endtime="20190414 23:23:59.863"></status>
+</suite>
+<status status="PASS" starttime="20190414 23:23:23.681" endtime="20190414 23:23:59.864"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Zoopla.Co.Uk">Zoopla.Co.Uk</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Tests">Zoopla.Co.Uk.Tests</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="LoginPage">Zoopla.Co.Uk.Tests.LoginPage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
